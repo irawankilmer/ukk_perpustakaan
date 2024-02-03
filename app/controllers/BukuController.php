@@ -66,4 +66,12 @@ class BukuController extends Controller
 			redirectTo('success', 'Selamat, Data Buku berhasil di hapus!', '/buku');
 		}
 	}
+
+  public function ulasan($id)
+  {
+    $this->view('buku/ulasan', [
+      'buku'    => $this->model('Buku')->getById($id),
+      'ulasan'  => $this->model('Ulasanbuku')->getByBookId($id)
+    ]);
+  }
 }

@@ -15,8 +15,6 @@
                     <th>Kategori</th>
                     <th>Judul</th>
                     <th>Penulis</th>
-                    <th>Penerbit</th>
-                    <th>Tahun Terbit</th>
                     <th>Tindakan</th>
                   </tr>
                   </thead>
@@ -27,8 +25,6 @@
                   		<td><?= $buku['NamaKategori']; ?></td>
                   		<td><?= $buku['Judul']; ?></td>
                   		<td><?= $buku['Penulis']; ?></td>
-                  		<td><?= $buku['Penerbit']; ?></td>
-                  		<td><?= $buku['TahunTerbit']; ?></td>
                       <td>
                         <a 
                           href="<?= urlTo('/buku/'.$buku['BukuID'].'/edit') ?>"
@@ -43,6 +39,13 @@
                           ">
                           Delete
                         </a>
+                        
+                        <a 
+                          href="<?= urlTo('/buku/'.$buku['BukuID'].'/ulasan') ?>"
+                          class="btn btn-info
+                          ">
+                          Lihat Ulasan
+                        </a>
                       </td>
                   	</tr>
                   	<?php $no++; ?>
@@ -54,8 +57,6 @@
                     <th>Kategori</th>
                     <th>Judul</th>
                     <th>Penulis</th>
-                    <th>Penerbit</th>
-                    <th>Tahun Terbit</th>
                     <th>Tindakan</th>
                   </tr>
                   </tfoot>
