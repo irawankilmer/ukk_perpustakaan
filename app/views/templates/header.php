@@ -54,8 +54,8 @@
           </li>
 
           <?php if ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Petugas'): ?>
-          <li class="nav-item <?= menuOpen(['user', 'kategoribuku', 'buku']); ?>">
-            <a href="#" class="nav-link <?= menuActive(['user', 'kategoribuku', 'buku']); ?>">
+          <li class="nav-item <?= menuOpen(['user', 'kategoribuku', 'buku', 'peminjam']); ?>">
+            <a href="#" class="nav-link <?= menuActive(['user', 'kategoribuku', 'buku', 'peminjam']); ?>">
               <i class="nav-icon fas fa-save"></i>
               <p>
                 Data
@@ -83,6 +83,13 @@
                 <a href="<?= urlTo('/buku'); ?>" class="nav-link <?= menuActive(['buku']); ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Buku</p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="<?= urlTo('/peminjam'); ?>" class="nav-link <?= menuActive(['peminjam']); ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Peminjam</p>
                 </a>
               </li>
 
