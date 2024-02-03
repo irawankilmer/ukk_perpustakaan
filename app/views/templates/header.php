@@ -54,8 +54,8 @@
           </li>
 
           <?php if ($_SESSION['role'] === 'Administrator'): ?>
-          <li class="nav-item <?= menuOpen(['user']); ?>">
-            <a href="#" class="nav-link <?= menuActive(['user']); ?>">
+          <li class="nav-item <?= menuOpen(['user', 'kategoribuku']); ?>">
+            <a href="#" class="nav-link <?= menuActive(['user', 'kategoribuku']); ?>">
               <i class="nav-icon fas fa-save"></i>
               <p>
                 Data
@@ -67,6 +67,13 @@
                 <a href="<?= urlTo('/user'); ?>" class="nav-link <?= menuActive(['user']); ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a href="<?= urlTo('/kategoribuku'); ?>" class="nav-link <?= menuActive(['kategoribuku']); ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Kategori Buku</p>
                 </a>
               </li>
             </ul>
