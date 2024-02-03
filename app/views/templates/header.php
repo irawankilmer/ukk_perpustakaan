@@ -53,7 +53,7 @@
             </a>
           </li>
 
-          <?php if ($_SESSION['role'] === 'Administrator'): ?>
+          <?php if ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Petugas'): ?>
           <li class="nav-item <?= menuOpen(['user', 'kategoribuku', 'buku']); ?>">
             <a href="#" class="nav-link <?= menuActive(['user', 'kategoribuku', 'buku']); ?>">
               <i class="nav-icon fas fa-save"></i>
@@ -63,12 +63,14 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <?php if ($_SESSION['role'] === 'Administrator'): ?>
               <li class="nav-item">
                 <a href="<?= urlTo('/user'); ?>" class="nav-link <?= menuActive(['user']); ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>User</p>
                 </a>
               </li>
+            <?php endif ?>
 
               <li class="nav-item">
                 <a href="<?= urlTo('/kategoribuku'); ?>" class="nav-link <?= menuActive(['kategoribuku']); ?>">
