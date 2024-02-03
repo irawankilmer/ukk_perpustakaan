@@ -2,6 +2,7 @@
 include '../core/Url.php';
 include '../core/Controller.php';
 include '../core/BaseModel.php';
+include '../dompdf/autoload.inc.php';
 $db = new BaseModel();
 $url = new Url();
 function checkIsNotLogin()
