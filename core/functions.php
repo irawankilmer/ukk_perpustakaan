@@ -2,7 +2,7 @@
 include '../core/Url.php';
 include '../core/Controller.php';
 include '../core/BaseModel.php';
-
+$db = new BaseModel();
 $url = new Url();
 function checkIsNotLogin()
 {
@@ -57,4 +57,12 @@ function menuOpen($menu)
 			return 'menu-open';
 		}
 	}
+}
+
+function hitung($table)
+{
+	global $db;
+	$result = $db->mysqli->query("SELECT * FROM ".$table);
+
+	return $result->num_rows;
 }
