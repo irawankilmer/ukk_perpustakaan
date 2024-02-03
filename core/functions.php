@@ -7,19 +7,19 @@ $url = new Url();
 function checkIsNotLogin()
 {
 	if (!isset($_SESSION['login'])) {
-		header("Location:http://localhost/oop/login");
+		header("Location:http://localhost/ukk_perpustakaan/login");
 	}
 }
 
 function urlTo($to)
 {
-	return 'http://localhost/oop'.$to;
+	return 'http://localhost/ukk_perpustakaan'.$to;
 }
 
 function redirectTo($icon, $pesan, $tujuan)
 {
 	setcookie('alert', serialize([$icon, $pesan]), time() + 1, '/');
-	header("Location:http://localhost/oop".$tujuan);
+	header("Location:http://localhost/ukk_perpustakaan".$tujuan);
 }
 
 function getTitle()
