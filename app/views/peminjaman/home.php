@@ -8,9 +8,10 @@
                   <thead>
                   <tr>
                     <th>#</th>
-                    <th>Kategori</th>
-                    <th>Judul</th>
-                    <th>Penulis</th>
+                    <th>Judul Buku</th>
+                    <th>Tanggal Peminjaman</th>
+                    <th>Tanggal di Kembalikan</th>
+                    <th>Status</th>
                     <th>Tindakan</th>
                   </tr>
                   </thead>
@@ -18,24 +19,18 @@
                   <?php foreach ($data as $buku): ?>
                   	<tr>
                   		<td><?= $no; ?></td>
-                  		<td><?= $buku['NamaKategori']; ?></td>
                   		<td><?= $buku['Judul']; ?></td>
-                  		<td><?= $buku['Penulis']; ?></td>
+                  		<td><?= $buku['TanggalPeminjaman']; ?></td>
+                  		<td><?= $buku['TanggalPengembalian']; ?></td>
+                  		<td><?= $buku['StatusPeminjaman']; ?></td>
                       <td>
-                        <a 
-                          href="<?= urlTo('/perpustakaan/'.$buku['BukuID'].'/detailbuku') ?>"
-                          class="btn btn-info
-                          ">
-                          Detail
-                        </a>
-
-                        <form action="<?= urlTo('/peminjaman/store') ?>" method="post" class="d-inline">
-                          <input type="hidden" name="BukuID" value="<?= $buku['BukuID']; ?>">
-                          <button class="btn btn-primary">
-                            Pinjam
-                          </button>
-                        </form>
-
+                        <?php if($buku['StatusPeminjaman'] === 'Belum di Kembalikan'): ?>
+                          <form action="<?= urlTo('/peminjaman/'.$buku['PeminjamanID'].'/kembalikan') ?>" method="post">
+                          <input type="hidden" name="TanggalPengembalian" value="<?= date('Y-m-d'); ?>">
+                          <input type="hidden" name="StatusPeminjaman" value="Sudah di Kembalikan">
+                            <button class="btn btn-info">Kembalikan</button>
+                          </form>
+                        <?php endif ?>
                       </td>
                   	</tr>
                   	<?php $no++; ?>
@@ -44,9 +39,10 @@
                   <tfoot>
                   <tr>
                     <th>#</th>
-                    <th>Kategori</th>
-                    <th>Judul</th>
-                    <th>Penulis</th>
+                    <th>Judul Buku</th>
+                    <th>Tanggal Peminjaman</th>
+                    <th>Tanggal di Kembalikan</th>
+                    <th>Status</th>
                     <th>Tindakan</th>
                   </tr>
                   </tfoot>

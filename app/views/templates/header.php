@@ -89,8 +89,8 @@
           <?php endif ?>
 
           <?php if ($_SESSION['role'] === 'Peminjam'): ?>
-          <li class="nav-item <?= menuOpen(['perpustakaan']); ?>">
-            <a href="#" class="nav-link <?= menuActive(['perpustakaan']); ?>">
+          <li class="nav-item <?= menuOpen(['perpustakaan', 'peminjaman']); ?>">
+            <a href="#" class="nav-link <?= menuActive(['perpustakaan', 'peminjaman']); ?>">
               <i class="nav-icon fas fa-save"></i>
               <p>
                 Perpustakaan
@@ -102,6 +102,13 @@
                 <a href="<?= urlTo('/perpustakaan'); ?>" class="nav-link <?= menuActive(['perpustakaan']); ?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Daftar Buku</p>
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a href="<?= urlTo('/peminjaman'); ?>" class="nav-link <?= menuActive(['peminjaman']); ?>">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Buku Pinjaman</p>
                 </a>
               </li>
             </ul>
